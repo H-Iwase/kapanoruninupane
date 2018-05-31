@@ -13,5 +13,7 @@ RUN set -x && \
 
 ADD keras.json /root/.keras/keras.json
 
-EXPOSE 8888
+EXPOSE 9987
 EXPOSE 6006
+
+CMD ["/run_jupyter.sh", "--allow-root", "--port=9987"]
