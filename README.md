@@ -1,10 +1,6 @@
 A) Install Docker
 
-B) Make Docker Image
-
-    1. docker build -t my-tensorflow ./
-
-C) kick jupyter-notebook
+B) kick run_tensorflow.sh
 
     1. sh run_tensorflow.sh
 
