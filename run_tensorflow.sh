@@ -1,8 +1,10 @@
 #! /bin/sh
-export PROJECT_ROOT="$(dirname \"$0\")"
-cd ${PROJECT_ROOT}
 
 set -e
+
+export PROJECT_ROOT="$(dirname $0)"
+cd ${PROJECT_ROOT}
+
 
 docker build -t kapa ./
 
