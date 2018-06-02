@@ -110,3 +110,6 @@ venv.bak/
 # Kaggle credential file
 kaggle.json
 */input/*
+
+# VSCode
+.vscode/*
