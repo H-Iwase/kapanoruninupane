@@ -2,6 +2,7 @@
 
 from abc import ABCMeta, abstractmethod
 from sklearn import svm, ensemble
+import lightgbm as lgbm
 from sklearn import grid_search
 import numpy as np
 from scipy.optimize import fmin
@@ -67,7 +68,7 @@ class GLM(Model):
 
     def callback(self, W):
         self.count += 1
-        if self.count % 100 == 0:
+        if self.count % 1000 == 0:
             print(self.count, W)
 
     def fit(self, data, label, param=None):
@@ -90,4 +91,6 @@ class GLM(Model):
         data = np.c_[data, C]
         return self.p(self.W, data)
 
-    
+class LightGBM(Model):
+    def __init__(self):
+        self.model = lgbm.LGBMClassifier()
