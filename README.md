@@ -8,7 +8,7 @@
 
     1. `$ sh run_tensorflow.sh`
 
-    When running on VM. Foward the port 8888 and 6006 for jupyter-notebook and tensorboard.
+    When running on VM. Foward the port 9987 and 6006 for jupyter-notebook and tensorboard.
 
 1. To download input data from Kaggle, run the following script inside container (e.g. from the top cell of the notebook)  
 `prepare_data.sh`  
