@@ -94,3 +94,20 @@ class GLM(Model):
 class LightGBM(Model):
     def __init__(self):
         self.model = lgbm.LGBMClassifier()
+
+class GradientBoostingRegressor(Model):
+    def __init__(self, loss='ls', learning_rate=0.1, n_estimators=100, subsample=1.0,
+        criterion='friedman_mse', min_samples_split=2, min_samples_leaf=1,
+        min_weight_fraction_leaf=0.0, max_depth=3, min_impurity_decrease=0.0,
+        min_impurity_split=None, init=None, random_state=None, max_features=None, alpha=0.9,
+        verbose=0, max_leaf_nodes=None, warm_start=False, presort='auto'):
+        self.model = ensemble.GradientBoostingRegressor(loss=loss, learning_rate=learning_rate, n_estimators=n_estimators,
+            subsample=subsample, criterion=criterion, min_samples_split=min_samples_split,
+            min_samples_leaf=min_samples_leaf, min_weight_fraction_leaf=min_weight_fraction_leaf,
+            max_depth=max_depth, min_impurity_decrease=min_impurity_decrease,
+            min_impurity_split=min_impurity_split, init=init, random_state=random_state,
+            max_features=max_features, alpha=alpha, verbose=verbose,
+            max_leaf_nodes=max_leaf_nodes, warm_start=warm_start, presort=presort)
+
+    def predict(self, data):
+        return self.model.predict(data)
